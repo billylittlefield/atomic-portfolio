@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   context: path.resolve(__dirname),
   output: {
@@ -29,8 +30,17 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,  
-        use: [ 'file-loader' ]
+        test: /\.(pdf|png|jp(e*)g|svg)$/,  
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
+        }],
+      },
+      {
+        test: /\.md$/,
+        use: ['raw-loader']
       }
     ],
   },
@@ -38,7 +48,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-    }),
+    })
   ],
   resolve: {
     modules: [

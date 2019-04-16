@@ -1,10 +1,7 @@
-import 'index.css';
-import NodeTree from 'js/node-tree'
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// const nodeTree = new NodeTree();
-// nodeTree.initialize()
+import 'index.css';
+import App from 'components/App'
 
-ReactDOM.render(<NodeTree />, document.getElementById('main'))
+ReactDOM.render(<App />, document.getElementById('main'))
