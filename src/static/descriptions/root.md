@@ -1,0 +1,3 @@
+- Front-end engineer with full-stack experience
+- Carnegie Mellon grad
+- Currently seeking new employment opportunities

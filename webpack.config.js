@@ -22,7 +22,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
@@ -30,7 +30,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(pdf|png|jp(e*)g|svg)$/,  
+        test: /\.(pdf|png|jp(e*)g|svg)$/,
         use: [{
           loader: 'file-loader',
           options: {
