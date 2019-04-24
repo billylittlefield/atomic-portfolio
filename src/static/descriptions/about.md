@@ -1,7 +1,9 @@
-I'm a San Francisco-based software developer with a strong engineering background. I'm also a homebrewer, bread baker, and board game enthusiast. Here you can learn about some of my coding projects and other hobbies. Use the D3.js force simulation node map to navigate around - it's fun to play with too; the nodes are draggable.
+| Year      | Event                                                                                               |
+|-----------|-----------------------------------------------------------------------------------------------------|
+| 1991      | Born in Wellesley, MA                                                                               |
+| 2009      | Graduated Wellesley High                                                                            |
+| 2013      | Graduated Carnegie Mellon  |
+| 2013 | Process Engineer @ Intel (Phoenix, AZ)                                                              |
+| 2016 | Software Engineer @ Addepar (SF, CA)                                          |
 
-My [résumé](google.com) and contact information are also available for inquiring minds. Shoot me a message if you have any questions or are interested in collaboration. 
-
-I'm currently open to new employment opportunities.
-  
--Billy
+My journey til now has taken me from coast to coast and from hardware to software. I have an extensive background in reactive engineering (fixing broken shit). I like to think it's also made me pretty good at building things that aren't broken in the first place.

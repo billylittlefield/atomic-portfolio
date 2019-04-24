@@ -19,7 +19,7 @@ section#main {
 /* SVG stuff */
 .node-tree {
   height: 100%;
-  transition: height 1s;
+  transition: height 1000ms;
 
   &.unfocused {
     height: 25%;
@@ -34,7 +34,7 @@ section#main {
 svg#node-tree__svg {
   width: 100%;
   height: 100%;
-  transition: transform 1s;
+  transition: transform 1000ms;
   position: absolute;
 
 
@@ -63,54 +63,92 @@ svg#node-tree__svg {
 }
 
 
+#lightboxBackdrop {
+  opacity: 0;
+  transition: opacity 300ms;
+  font-family: 'Montserrat', sans-serif;
+}
+
 /* Info page styling */
 .node-page {
   height: 75%;
   width: 100%;
   margin: auto;
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity 500ms;
   color: #ddd;
-}
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;  /* Firefox */
 
-.node-page__title, .node-page__content-container {
-  width: 40%;
-}
-
-.node-page__title {
-  width: 100%;
-  height: 114px;
-  font-family: 'Baloo', sans-serif;
-  font-size: 48px;
-  text-align: center;
-  letter-spacing: 5px;
-
-  h1 {
-    margin: 0;
+  &::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
   }
 }
 
 .node-page__content-container {
-  height: calc(100% - 114px);
-  padding: 0 30% 30px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE 10+ */
-  scrollbar-width: none;  /* Firefox */
+  width: 40%;
 }
 
-.node-page__content-container::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+.node-page__title {
+  margin-top: 16px;
+
+  h1 {
+    font-family: 'Baloo', sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 48px;
+    margin: 0;
+    color: #d27bec;
+  }
+}
+
+.node-page__links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  a {
+    margin: 0 16px;
+  }
+}
+
+.node-page__content, .node-page__links {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+
+  a {
+    color: #42d3f1;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:visited {
+      color: #6958fd
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .node-page__content {
-  height: 100%;
-  font-size: 18px;
-  text-align: justify;
-  font-family: 'Montserrat', sans-serif;
-
   .node-page__content-description {
+    width: 40%;
+    min-width: 500px;
+    text-align: justify;
+    margin: auto;
+    line-height: 1.5;
+
     p:first-child {
       margin-top: 0;
+    }
+
+    table {
+      margin: auto;
+      border-spacing: 8px;
     }
   }
 }
@@ -123,4 +161,100 @@ svg#node-tree__svg {
 iframe {
   height: 300px;
   width: 100%;
+}
+
+/* Images */
+.node-page__images {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 8px 0 16px;
+
+  .image-container {
+    margin: 0 16px;
+    border: 2px solid #42d3f1;
+    cursor: pointer;
+    position: relative;
+    height: 75px;
+    transition: border-color 200ms;
+
+    &:hover {
+      border-color: #d27bec;
+    }
+  
+    img {
+      object-fit: cover;
+      width: 125px;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #d27bec;
+      opacity: 0;
+      transition: opacity 200ms;
+
+      &:hover {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+/* Contact Form */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+
+    input {
+      height: 2.5em;
+      padding: 0 1em;
+
+      &.half:first-child {
+        margin-right: 16px;
+      }
+    }
+
+    textarea {
+      padding: 0.75em 1em;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      border-radius: 5px;
+      border: solid 2px #d27bec;
+      font-size: 16px;
+      font-family: inherit;
+
+      &:focus,&:hover {
+        outline: none;
+        border-color: #42d3f1;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      height: 2.5em;
+      padding: 0 1em;
+      width: 40%;
+      background-color: #d27bec;
+      color: #fff;
+      font-weight: 700;
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: #42d3f1;
+      }
+    }
+  }
 }

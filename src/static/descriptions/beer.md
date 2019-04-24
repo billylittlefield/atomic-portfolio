@@ -2,8 +2,6 @@ The bay area is one of the best places to live if you like craft beer. Cellarmak
 
 We do all-grain brewing, which I prefer over extract brewing due to the granular level of control you have on the grain bill. Plus, it's hard to top that oatmeal smell of mash in the morning. I'm excited to continue brewing new styles in the future and further refine our brew process.
 
-If you're ever stressed out, don't forget the homebrew mantra from [_The Complete Joy of Homebrewing_](https://www.amazon.com/Complete-Joy-Homebrewing-Third/dp/0060531053):
-
-> Relax, don't worry, have a homebrew!
+If you're ever stressed out, don't forget the homebrew mantra from [_The Complete Joy of Homebrewing_](https://www.amazon.com/Complete-Joy-Homebrewing-Third/dp/0060531053): "Relax, don't worry, have a homebrew!"
 
 Cheers!

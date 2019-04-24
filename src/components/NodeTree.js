@@ -9,25 +9,25 @@ import {
 } from "d3-force";
 import React from "react";
 
-import routeNodes from "static/nodes";
+import nodeTree from "static/nodes";
 
-const depthSettings = {
-  0: {
-    radius: 150,
-    fontSize: "56px",
+const depthSettings = [
+  {
+    radius: 100,
+    fontSize: "36px",
     fill: "#6959fd"
   },
-  1: {
-    radius: 80,
-    fontSize: "36px",
-    fill: "#42d3f1"
-  },
-  2: {
+  {
     radius: 50,
     fontSize: "24px",
+    fill: "#42d3f1"
+  },
+  {
+    radius: 40,
+    fontSize: "18px",
     fill: "#65cc65"
   }
-};
+];
 
 function drag(simulation) {
   function dragstarted(d) {
@@ -94,10 +94,10 @@ export default class NodeTree extends React.Component {
     const svg = this.node;
     d3select(svg).on('click', () => {
       if (!this.props.isFocused) {
-        this.props.selectNode(null);
+        this.props.focusNodeTree();
       }
     })
-    const nodes = this.createNodes(routeNodes, 0, null);
+    const nodes = this.createNodes(nodeTree, 0, null);
     const links = this.createLinks(nodes);
     const simulation = this.createForceSimulation(nodes, links);
     const linkElements = this.addLinksToSimulation(svg, links);
@@ -178,18 +178,22 @@ export default class NodeTree extends React.Component {
         d3select(this)
           .select("circle")
           .attr("stroke-width", "16px")
-          .attr("fill", "#ff000000")
           .attr(
             "style",
             "transition: stroke-width 0.4s, fill 0.4s, opacity 0.4s;"
           );
-        d3select(this)
-          .selectAll("text")
-          .attr(
-            "style",
-            "transition: stroke-width 0.4s, fill 0.4s, opacity 0.4s;"
-          )
-          .attr("opacity", "0");
+          if (d.image) {
+            d3select(this)
+              .select('circle')
+              .attr("fill", "#ff000000")
+            d3select(this)
+              .selectAll("text")
+              .attr(
+                "style",
+                "transition: stroke-width 0.4s, fill 0.4s, opacity 0.4s;"
+              )
+              .attr("opacity", "0");
+          }
       })
       .on("mouseout", function(d) {
         d3select(this)
@@ -203,8 +207,10 @@ export default class NodeTree extends React.Component {
           .attr("opacity", "1");
       })
       .on("click", d => {
-        this.props.selectNode(d);
-        d3event.stopPropagation();
+        if (this.props.isFocused) {
+          this.props.selectNode(d);
+          d3event.stopPropagation();
+        }
       })
       .call(drag(simulation));
 
@@ -265,8 +271,10 @@ export default class NodeTree extends React.Component {
       nodeElements.attr("transform", d => `translate(${d.x},${d.y})`);
     });
   }
-
+  
+  
   render() {
+    const [ rad0, rad1, rad2 ] = depthSettings.map(d => d.radius);
     return (
       <div className={`node-tree ${this.props.isFocused ? "focused" : "unfocused"}`}>
         <svg
@@ -280,13 +288,13 @@ export default class NodeTree extends React.Component {
         >
           <defs>
             <clipPath id="circle-0-clip">
-              <circle cx="150" cy="150" r="150" />
+              <circle cx={rad0} cy={rad0} r={rad0} />
             </clipPath>
             <clipPath id="circle-1-clip">
-              <circle cx="80" cy="80" r="80" />
+              <circle cx={rad1} cy={rad1} r={rad1} />
             </clipPath>
             <clipPath id="circle-2-clip">
-              <circle cx="50" cy="50" r="50" />
+              <circle cx={rad2} cy={rad2} r={rad2} />
             </clipPath>
           </defs>
         </svg>
