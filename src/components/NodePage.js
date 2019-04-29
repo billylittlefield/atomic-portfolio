@@ -89,9 +89,9 @@ export default function(props) {
               >
                 {link.text === "Back" ? (
                   <img
-                    src="images/uturn.svg"
-                    onMouseOver={function(e) {e.target.src='images/uturn-hover.svg'}}
-                    onMouseOut={function(e) { e.target.src='images/uturn.svg'}}
+                    src="assets/images/uturn.svg"
+                    onMouseOver={function(e) {e.target.src='assets/images/uturn-hover.svg'}}
+                    onMouseOut={function(e) { e.target.src='assets/images/uturn.svg'}}
                   />
                 ) : (
                   link.text

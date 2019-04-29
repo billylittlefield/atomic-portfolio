@@ -31,11 +31,20 @@ module.exports = {
         ],
       },
       {
-        test: /\.(pdf|png|jp(e*)g|svg)$/,
+        test: /\.(png|jp(e*)g|svg)$/,
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'images/[name].[ext]'
+            name: 'assets/images/[name].[ext]'
+          }
+        }],
+      },
+      {
+        test: /\.pdf$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'assets/[name].[ext]'
           }
         }],
       },
@@ -51,7 +60,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new CopyWebpackPlugin([
-      { from: 'src/images', to: 'images' }
+      { from: 'src/assets', to: 'assets' }
     ])
   ],
   resolve: {
