@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
+import Header from "components/Header";
 import NodeTree from "components/NodeTree";
 import NodePage from "components/NodePage";
 import nodeTree from "static/nodes";
 
 export default function() {
-  const [selectedNode, setSelectedNode] = useState(null);
-  const [isNodePageHidden, setIsNodePageHidden] = useState(true);
+  const [selectedNode, setSelectedNode] = useState(lookupNode("Billy Littlefield"));
+  const [isNodePageHidden, setIsNodePageHidden] = useState(false);
   const [isFadeTransitioning, setIsFadeTransitioning] = useState(false);
+  const [futureSelectedNode, setFutureSelectedNode] = useState(selectedNode);
 
   function lookupNode(nodeName) {
     function lookupHelper(node, name) {
@@ -33,6 +35,12 @@ export default function() {
       node = lookupNode(node);
     }
 
+    if (node.name === "Résumé") {
+      window.open('src/littlefield-resume.pdf');
+      return;
+    }
+
+    setFutureSelectedNode(node);
     if (isNodePageHidden) {
       setSelectedNode(node);
       setIsNodePageHidden(false);
@@ -54,15 +62,23 @@ export default function() {
 
   return (
     <>
-      <NodeTree
+      <Header 
+        node={lookupNode("Billy Littlefield")}
+        isHidden={isNodePageHidden}
         selectNode={selectNode}
         focusNodeTree={focusNodeTree}
-        isFocused={isNodePageHidden}
+        selectedNode={futureSelectedNode}
+        lookupNode={lookupNode}
       />
       <NodePage
         node={selectedNode}
         selectNode={selectNode}
         isHidden={isNodePageHidden || isFadeTransitioning}
+      />
+      <NodeTree
+        selectNode={selectNode}
+        focusNodeTree={focusNodeTree}
+        isFocused={isNodePageHidden}
       />
     </>
   );

@@ -15,7 +15,8 @@ const depthSettings = [
   {
     radius: 100,
     fontSize: "36px",
-    fill: "#6959fd"
+    // fill: "#6959fd"
+    fill: "#d27bec"
   },
   {
     radius: 50,
@@ -75,7 +76,7 @@ export default class NodeTree extends React.Component {
     this.createNodeTree();
     this.boundRedraw = this.redraw.bind(this);
     window.addEventListener("resize", this.boundRedraw);
-  }
+  } 
 
   componentWillDestroy() {
     window.removeEventListener("resize", this.boundRedraw);
@@ -85,7 +86,10 @@ export default class NodeTree extends React.Component {
     this.simulation
       .force(
         "center",
-        forceCenter(window.innerWidth / 2, window.innerHeight / 2)
+        forceCenter(
+          document.querySelector(".node-tree").clientWidth / 2,
+          document.querySelector(".node-tree").clientHeight / 2
+        )
       )
       .restart();
   }
@@ -145,8 +149,8 @@ export default class NodeTree extends React.Component {
       .force(
         "center",
         forceCenter(
-          document.querySelector("html").clientWidth / 2,
-          document.querySelector("html").clientHeight / 2
+          document.querySelector(".node-tree").clientWidth / 2,
+          document.querySelector(".node-tree").clientHeight / 2
         )
       )
       .force(
@@ -180,12 +184,12 @@ export default class NodeTree extends React.Component {
           .attr("stroke-width", "16px")
           .attr(
             "style",
-            "transition: stroke-width 0.4s, fill 0.4s, opacity 0.4s;"
+            "transition: stroke-width 0.4s, fill-opacity 0.4s, opacity 0.4s;"
           );
           if (d.image) {
             d3select(this)
               .select('circle')
-              .attr("fill", "#ff000000")
+              .attr("fill-opacity", "0")
             d3select(this)
               .selectAll("text")
               .attr(
@@ -199,8 +203,8 @@ export default class NodeTree extends React.Component {
         d3select(this)
           .select("circle")
           .attr("stroke-width", "4px")
-          .attr("style", "transition: stroke-width 1s, fill 1s, opacity 1s;")
-          .attr("fill", d => depthSettings[d.depth].fill);
+          .attr("style", "transition: stroke-width 1s, fill-opacity 1s, opacity 1s;")
+          .attr("fill-opacity", "1");
         d3select(this)
           .selectAll("text")
           .attr("style", "transition: stroke-width 1s, fill 1s, opacity 1s;")
@@ -221,6 +225,7 @@ export default class NodeTree extends React.Component {
       .attr("y", 0)
       .attr("height", d => depthSettings[d.depth].radius * 2)
       .attr("width", d => depthSettings[d.depth].radius * 2)
+      .attr("xlink:href", d => (d.image ? `src/images/${d.image}` : ""))
       .attr("href", d => (d.image ? `src/images/${d.image}` : ""))
       .attr("clip-path", d => `url(#circle-${d.depth}-clip)`)
       .attr(
@@ -277,26 +282,26 @@ export default class NodeTree extends React.Component {
     const [ rad0, rad1, rad2 ] = depthSettings.map(d => d.radius);
     return (
       <div className={`node-tree ${this.props.isFocused ? "focused" : "unfocused"}`}>
-        <svg
-          id="node-tree__svg"
-          className={this.props.isFocused ? "focused" : "unfocused"}
-          ref={node => (this.node = node)}
-          height="100%"
-          width="100%"
-          transform={this.props.isFocused ? "scale(1)" : "scale(0.25)"}
-          transform-origin="top"
-        >
-          <defs>
-            <clipPath id="circle-0-clip">
-              <circle cx={rad0} cy={rad0} r={rad0} />
-            </clipPath>
-            <clipPath id="circle-1-clip">
-              <circle cx={rad1} cy={rad1} r={rad1} />
-            </clipPath>
-            <clipPath id="circle-2-clip">
-              <circle cx={rad2} cy={rad2} r={rad2} />
-            </clipPath>
-          </defs>
+        <div className="tree-overlay"></div>
+        <svg>
+          <g
+            id="node-tree__grouping"
+            className={this.props.isFocused ? "focused" : "unfocused"}
+            ref={node => (this.node = node)}
+            height="100%"
+            width="100%">
+            <defs>
+              <clipPath id="circle-0-clip">
+                <circle cx={rad0} cy={rad0} r={rad0} />
+              </clipPath>
+              <clipPath id="circle-1-clip">
+                <circle cx={rad1} cy={rad1} r={rad1} />
+              </clipPath>
+              <clipPath id="circle-2-clip">
+                <circle cx={rad2} cy={rad2} r={rad2} />
+              </clipPath>
+            </defs>
+          </g>
         </svg>
       </div>
     );

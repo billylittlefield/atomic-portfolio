@@ -1,7 +1,10 @@
-I have experience working across the full stack on web applications, but enjoy client-side development most of all. Building interactive UIs and games in this age of client-side empowerment is pretty awesome, especially given the massive ecosystem of public packages & tools. I love the process of converting an idea into aninteractive product, distilling a workflow into requisite state-trees and actions. 
 
-Server-side, I have the most experience working with `Node` and `Java`. I like `Node` development for multiple reasons: it grants the ability to code-share between client & server, there's no language context-switching for full-stack development, and the async I/O model is powerful. The ease of quickly spinning up an Express server for hobby projects is hard to beat, too.
+| Category | Experience |
+| ------------ | ------------- |
+| *Server* | Node.js (Express), Java, SQL |
+| *Client* | HTML, CSS, JavaScript (ES6+), React, Ember |
+| *Libraries* | jQuery, Lodash, Redux, D3, Socket.IO, Webpack, Axios, Knex, Moment, Tether, QUnit, Immer, HTML5 Canvas, ECharts, BCrypt |
 
-When it comes to front-end frameworks, I have extensive experience using `Ember` (Addepar) and more recently have enjoyed using `React` for side projects (with `Redux` for state management). In my time spent doing front-end development, I've worked on a wide variety of projects - building data visualizations, improving browser performance, architecting complex components, generating PDFs from HTML, to name a few. I've similarly encountered a myriad of edgecases, bugs, and JavaScript oddities (of course). I find that these _issues_ are most important in becoming a better developer - when problem-solving, you learn how to avoid certain pitfalls in the future and gain understanding of how a given process works. I like to think every bug I squash is a notch in the belt, and my belt has more than a few notches.
+I've been developing and building web products full-time since 2015. I enjoy front-end / JavaScript development most of all, but have experience across the stack and am open to both full-stack and front-end opportunities.
 
 Take a look at some of my side projects by clicking the links below.

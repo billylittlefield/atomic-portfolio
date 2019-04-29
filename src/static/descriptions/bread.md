@@ -1,6 +1,6 @@
-I've always enjoyed baking, a product of growing up with a stellar baker mom. My bread game was elevated when my friend Patricia introduced me to Ken Forkish's wonderful book [*Flour Salt Water Yeast*](https://www.amazon.com/Flour-Water-Salt-Yeast-Fundamentals/dp/160774273X) and supplied me with a complete set of bread baking equipment to follow along with the book. I can't thank her enough for sparking this baking fire in my soul!
+I've always enjoyed baking, which is likely a result of having a star baker mom. Most recently, I've been focusing on elevating my bread game after baking my way through Ken Forkish's wonderful book [*Flour Salt Water Yeast*](https://www.amazon.com/Flour-Water-Salt-Yeast-Fundamentals/dp/160774273X).
 
-Like homebrewing, I love the process of improving technique through iteration. Making good bread is really just a matter of tweaking certain inputs (time, temperature, weights, and hydration). I also love the feeling of working with dough as it transforms from disparate elements into a cohesive, delicious loaf.
+Like homebrewing, I love the process of improving technique through iteration. Making good bread is really just a function of twisting certain knobs (time, temperature, weights, and hydration) in the right way. I also love the feeling of working with dough as it transforms from disparate elements into a cohesive, delicious loaf.
 
 For the extra-curious, here's my bread journal where I track recipe timings, weights, and temperatures. Keeping records is the best way to improve at anything!
 

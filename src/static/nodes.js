@@ -1,5 +1,4 @@
 import RootDescription from 'static/descriptions/root.md';
-import AboutDescription from 'static/descriptions/about.md';
 import CodeDescription from 'static/descriptions/code.md';
 import DragonPopDescription from 'static/descriptions/dragon-pop.md';
 import MoradoDescription from 'static/descriptions/morado.md';
@@ -15,12 +14,13 @@ export default {
   name: "Billy Littlefield",
   image: "portrait.png",
   description: RootDescription,
-  linksBelow: true,
   links: [
-    { text: "Code", action: "selectNode", payload: "Code" },
-    { text: "Not Code", action: "selectNode", payload: "Not Code"},
-    { text: "Résumé", action: "selectNode", payload: "Résumé"},
-    { text: "Contact", action: "selectNode", payload: "Contact" }
+    { text: "Code Stuff", action: "selectNode", payload: "Code Stuff" },
+    { text: "Other Stuff", action: "selectNode", payload: "Other Stuff"},
+    { text: 'Résumé', url: 'src/littlefield-resume.pdf' },
+    { text: 'LinkedIn', url: 'https://www.linkedin.com/in/billylittlefield' },
+    { text: 'Github', url: 'https://github.com/billylittlefield' },
+    { text: "Contact", action: "selectNode", payload: "Contact" },
   ],
   images: [
     { src: 'src/images/portrait/portrait-1.jpg' },
@@ -29,32 +29,29 @@ export default {
   ],
   children: [
     {
-      name: "About",
-      description: AboutDescription,
-      linksBelow: true,
+      name: "Résumé",
+      description: ResumeDescription,
+      image: 'resume.png',
       links: [
-        { text: 'Résumé', action: "selectNode", payload: 'Résumé' },
-        { text: 'Contact', action: "selectNode", payload: 'Contact' },
-        { text: 'Github', href: 'https://github.com/billylittlefield' },
-        { text: 'LinkedIn', href: 'https://www.linkedin.com/in/billylittlefield' },
-      ],
-      children: [{
-        name: "Résumé",
-        description: ResumeDescription,
-        image: 'resume.png',
-        links: [
-          { text: 'Download', url: 'src/resume.pdf', download: true }
-        ]
-      },{
-        name: "Contact",
-        image: 'contact.jpg',
-        description: ContactDescription,
-      }]
+        { text: 'Back', action: 'selectNode', payload: 'Billy Littlefield' },
+        { text: 'Download', url: 'src/littlefield-resume.pdf', download: true }
+      ]
+    },{
+      name: "Contact",
+      image: 'contact.jpg',
+      description: ContactDescription,
     },
     {
-      name: "Code",
+      name: "Code Stuff",
       description: CodeDescription,
       image: 'code.png',
+      links: [
+        { text: 'Back', action: 'selectNode', payload: 'Billy Littlefield' },
+        { text: 'Dragon Pop', action: 'selectNode', payload: 'Dragon Pop' },
+        { text: 'Addebeats', action: 'selectNode', payload: 'Adde- beats' },
+        { text: 'JogLog', action: 'selectNode', payload: 'JogLog' },
+        { text: 'Morado', action: 'selectNode', payload: 'Morado' },
+      ],
       children: [{
         name: "Dragon Pop",
         description: DragonPopDescription,
@@ -65,6 +62,7 @@ export default {
           { src: 'src/images/dragon-pop/dragon-pop-3.png' }
         ],
         links: [
+          { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
           { text: "Github", url: "https://github.com/billylittlefield/dragon-pop/" },
           { text: "Live", url: "https://www.billylittlefield.com/dragon-pop/" }
         ]
@@ -78,6 +76,7 @@ export default {
           { src: 'src/images/joglog/joglog-3.png' }
         ],
         links: [
+          { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
           { text: "Github", url: "https://github.com/billylittlefield/JogLog/" },
           { text: "Live", url: "https://thejoggerlogger.herokuapp.com/" }
         ]
@@ -92,6 +91,7 @@ export default {
           { src: 'src/images/adde-beats/adde-beats-3.png' }
         ],
         links: [
+          { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
           { text: "Github", url: "https://github.com/billylittlefield/addebeats/" },
           { text: "Live", url: "https://www.billylittlefield.com/addebeats/" }
         ]
@@ -105,22 +105,46 @@ export default {
           { src: 'src/images/morado/morado-3.png' }
         ],
         links: [
+          { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
           { text: "Github", url: "https://github.com/billylittlefield/Morado/" },
         ]
       }]
     },
     {
-      name: "Not Code",
+      name: "Other Stuff",
       description: NotCodeDescription,
       image: 'not-code.png',
+      links: [
+        { text: 'Back', action: 'selectNode', payload: 'Billy Littlefield' },
+        { text: 'Bread', action: 'selectNode', payload: 'Bread' },
+        { text: 'Beer', action: 'selectNode', payload: 'Beer' },
+      ],
       children: [{
         name: "Bread",
         description: BreadDescription,
         image: 'bread.png',
+        links: [
+          { text: 'Back', action: 'selectNode', payload: 'Other Stuff' },
+        ],
+        images: [
+          { src: 'src/images/bread/bread-1.jpg'},
+          { src: 'src/images/bread/bread-2.jpg' },
+          { src: 'src/images/bread/bread-3.jpg' }
+        ],
       },{
         name: "Beer",
         description: BeerDescription,
-        image: 'beer.png'
+        image: 'beer.png',
+        links: [
+          { text: 'Back', action: 'selectNode', payload: 'Other Stuff' },
+        ],
+        images: [
+          { src: 'src/images/beer/beer-1.JPG', style: { objectPosition: "0 20%" } },
+          { src: 'src/images/beer/beer-2.JPG' },
+          { src: 'src/images/beer/beer-3.JPG' },
+          { src: 'src/images/beer/beer-4.gif' },
+          { src: 'src/images/beer/beer-5.JPG' }
+        ],
       }]
     }
   ]

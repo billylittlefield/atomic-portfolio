@@ -1,0 +1,67 @@
+/* High-level stuff */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #333;
+  text-size-adjust: 100%;
+  font-weight: 400px; 
+  -ms-text-size-adjust: 100%; 
+  -moz-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
+}
+
+.node-page__description {
+  padding: 0 5%;
+}
+
+@media screen and (max-width: 320px) {
+  .node-page__images > .image-container:first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .node-page__images > .image-container:last-child {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .node-page__description { padding: 0 15%; }
+}
+
+@media screen and (min-width:1000px) {
+  .node-page__description { padding: 0 20%; } /* Reduce the container width */
+}
+@media screen and (min-width:1200px) {
+  body { font-size:110%; } /* Increase the font size */
+}
+@media screen and (min-width:1400px) {
+  .node-page__description { padding: 0 25%; } /* Reduce the container width */
+}
+@media screen and (min-width:1600px) {
+  body { font-size:125%; } /* Increase the font size */
+}
+@media screen and (min-width:1800px) {
+  .node-page__description { padding:0 30%; } /* Reduce the container width */
+}
+
+section#main {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+}

@@ -1,0 +1,60 @@
+.tree-overlay {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(to right, #333333ff 0%, #33333300 20% 80%, #333333ff 100%),
+    linear-gradient(#333333ff 0%, #33333300 20% 80%, #333333ff 100%);
+  pointer-events: none;
+}
+
+/* SVG stuff */
+.node-tree {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: left 1s, opacity 1s;
+  position: absolute;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  &.unfocused {
+    opacity: 0.075;
+    left: -30%;
+    pointer-events: none;
+
+    g#node-tree__grouping {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+  }
+}
+
+g#node-tree__grouping {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  text {
+    user-select: none;
+    cursor: pointer;
+    pointer-events: none;
+  }
+  
+  circle {
+    cursor: pointer;
+  }
+  
+  line {
+    stroke: #fff;
+    stroke-width: 4px;
+  }
+  
+  text {
+    font-family: 'Baloo', sans-serif;
+    fill: #fff;
+  }
+}
