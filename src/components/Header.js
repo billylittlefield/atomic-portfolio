@@ -29,7 +29,7 @@ export default function(props) {
   }
   
   return (
-    <div className={`header ${props.isHidden ? 'hidden' : ''}`}>
+    <div className={`header ${props.isHidden ? 'hidden' : ''} ${props.isFadeTransitioning ? 'fading' : ''}`}>
       <h1 onClick={props.focusNodeTree}>Billy Littlefield</h1>
       {renderLinks()}
     </div>

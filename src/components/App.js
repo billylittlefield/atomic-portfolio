@@ -40,6 +40,10 @@ export default function() {
       return;
     }
 
+    if (selectedNode && node.name === selectedNode.name && !isNodePageHidden) {
+      return;
+    }
+
     setFutureSelectedNode(node);
     if (isNodePageHidden) {
       setSelectedNode(node);
@@ -55,8 +59,10 @@ export default function() {
 
   function focusNodeTree() {
     setIsNodePageHidden(true);
+    setIsFadeTransitioning(true);
     setTimeout(() => {
       setSelectedNode(null);
+      setIsFadeTransitioning(false);
     }, 500);
   }
 
@@ -65,6 +71,7 @@ export default function() {
       <Header 
         node={lookupNode("Billy Littlefield")}
         isHidden={isNodePageHidden}
+        isFadeTransitioning={isFadeTransitioning}
         selectNode={selectNode}
         focusNodeTree={focusNodeTree}
         selectedNode={futureSelectedNode}

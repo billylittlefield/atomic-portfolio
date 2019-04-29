@@ -23,9 +23,9 @@ export default {
     { text: "Contact", action: "selectNode", payload: "Contact" },
   ],
   images: [
-    { src: 'src/images/portrait/portrait-1.jpg' },
-    { src: 'src/images/portrait/portrait-2.jpg', style: { objectPosition: "0 20%" } },
-    { src: 'src/images/portrait/portrait-3.jpg' }
+    { src: 'images/portrait/portrait-1.jpg' },
+    { src: 'images/portrait/portrait-2.jpg', style: { objectPosition: "0 20%" } },
+    { src: 'images/portrait/portrait-3.jpg' }
   ],
   children: [
     {
@@ -57,9 +57,9 @@ export default {
         description: DragonPopDescription,
         image: 'dragon-pop.png',
         images: [
-          { src: 'src/images/dragon-pop/dragon-pop-1.png' },
-          { src: 'src/images/dragon-pop/dragon-pop-2.png' },
-          { src: 'src/images/dragon-pop/dragon-pop-3.png' }
+          { src: 'images/dragon-pop/dragon-pop-1.png' },
+          { src: 'images/dragon-pop/dragon-pop-2.png' },
+          { src: 'images/dragon-pop/dragon-pop-3.png' }
         ],
         links: [
           { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
@@ -71,9 +71,9 @@ export default {
         description: JogLogDescription,
         image: 'joglog.png',
         images: [
-          { src: 'src/images/joglog/joglog-1.png' },
-          { src: 'src/images/joglog/joglog-2.png' },
-          { src: 'src/images/joglog/joglog-3.png' }
+          { src: 'images/joglog/joglog-1.png' },
+          { src: 'images/joglog/joglog-2.png' },
+          { src: 'images/joglog/joglog-3.png' }
         ],
         links: [
           { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
@@ -86,9 +86,9 @@ export default {
         image: "addebeats.png",
         description: AddebeatsDescription,
         images: [
-          { src: 'src/images/adde-beats/adde-beats-1.png' },
-          { src: 'src/images/adde-beats/adde-beats-2.png' },
-          { src: 'src/images/adde-beats/adde-beats-3.png' }
+          { src: 'images/adde-beats/adde-beats-1.png' },
+          { src: 'images/adde-beats/adde-beats-2.png' },
+          { src: 'images/adde-beats/adde-beats-3.png' }
         ],
         links: [
           { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
@@ -100,9 +100,9 @@ export default {
         description: MoradoDescription,
         image: 'morado.jpeg',
         images: [
-          { src: 'src/images/morado/morado-1.png' },
-          { src: 'src/images/morado/morado-2.png' },
-          { src: 'src/images/morado/morado-3.png' }
+          { src: 'images/morado/morado-1.png' },
+          { src: 'images/morado/morado-2.png' },
+          { src: 'images/morado/morado-3.png' }
         ],
         links: [
           { text: 'Back', action: 'selectNode', payload: 'Code Stuff' },
@@ -127,9 +127,9 @@ export default {
           { text: 'Back', action: 'selectNode', payload: 'Other Stuff' },
         ],
         images: [
-          { src: 'src/images/bread/bread-1.jpg'},
-          { src: 'src/images/bread/bread-2.jpg' },
-          { src: 'src/images/bread/bread-3.jpg' }
+          { src: 'images/bread/bread-1.jpg'},
+          { src: 'images/bread/bread-2.jpg' },
+          { src: 'images/bread/bread-3.jpg' }
         ],
       },{
         name: "Beer",
@@ -139,11 +139,11 @@ export default {
           { text: 'Back', action: 'selectNode', payload: 'Other Stuff' },
         ],
         images: [
-          { src: 'src/images/beer/beer-1.JPG', style: { objectPosition: "0 20%" } },
-          { src: 'src/images/beer/beer-2.JPG' },
-          { src: 'src/images/beer/beer-3.JPG' },
-          { src: 'src/images/beer/beer-4.gif' },
-          { src: 'src/images/beer/beer-5.JPG' }
+          { src: 'images/beer/beer-1.jpg', style: { objectPosition: "0 20%" } },
+          { src: 'images/beer/beer-2.jpg' },
+          { src: 'images/beer/beer-3.jpg' },
+          { src: 'images/beer/beer-4.gif' },
+          { src: 'images/beer/beer-5.jpg' }
         ],
       }]
     }

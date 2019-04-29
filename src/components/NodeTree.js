@@ -225,8 +225,8 @@ export default class NodeTree extends React.Component {
       .attr("y", 0)
       .attr("height", d => depthSettings[d.depth].radius * 2)
       .attr("width", d => depthSettings[d.depth].radius * 2)
-      .attr("xlink:href", d => (d.image ? `src/images/${d.image}` : ""))
-      .attr("href", d => (d.image ? `src/images/${d.image}` : ""))
+      .attr("xlink:href", d => (d.image ? `images/${d.image}` : ""))
+      .attr("href", d => (d.image ? `images/${d.image}` : ""))
       .attr("clip-path", d => `url(#circle-${d.depth}-clip)`)
       .attr(
         "transform",
